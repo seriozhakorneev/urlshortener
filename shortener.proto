@@ -1,0 +1,12 @@
+syntax = "proto3";
+package shortener;
+option go_package = "/shortener";
+
+message Message {
+    string body = 1;
+}
+
+service UrlService {
+    rpc Create(Message) returns (Message) {}
+    rpc Get(Message) returns (Message) {}
+}
